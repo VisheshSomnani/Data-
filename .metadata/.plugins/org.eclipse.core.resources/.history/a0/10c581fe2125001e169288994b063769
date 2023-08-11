@@ -1,0 +1,36 @@
+package com.example.demo.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="Subjects")
+public class Subject {
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="my_seq")
+	@SequenceGenerator(name="my_seq",sequenceName="my_seq",initialValue = 1, allocationSize=1)
+	private int id;
+	private String name;
+	@OneToMany(mappedBy = "subject")
+    Set<ClassSubjects> registrations;
+	public Subject() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+}

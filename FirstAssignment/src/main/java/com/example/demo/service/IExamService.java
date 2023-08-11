@@ -1,0 +1,11 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import com.example.demo.entity.Exam;
+
+public interface IExamService {
+	public List<Exam> getAllExams();
+	public Exam insertExam(Exam e);
+	public Exam getExamById(int examId);
+}

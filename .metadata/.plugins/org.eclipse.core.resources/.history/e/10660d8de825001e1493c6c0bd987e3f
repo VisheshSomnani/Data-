@@ -1,0 +1,26 @@
+package com.example.demo.entity;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+@Entity
+public class UserBooks {
+	@Id
+    Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    User user;
+
+    @ManyToOne
+    @JoinColumn(name = "book_id")
+    Book book;
+    @ManyToOne
+    @JoinColumn(name = "transaction_id")
+    Transaction transaction;
+    
+    LocalDateTime created_at;
+}

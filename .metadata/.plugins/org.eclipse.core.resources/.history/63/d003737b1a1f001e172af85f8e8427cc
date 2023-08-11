@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="emp1" class="com.demo.Employee">
+		<constructor-arg name="empid" value = "101"></constructor-arg>
+		<constructor-arg name="ename" value = "Vishesh"></constructor-arg>
+		<constructor-arg name="salary" value = "62500"></constructor-arg>
+		
+	</bean>
+	<bean id="emp2" class="com.demo.Employee">
+		<constructor-arg value = "102"></constructor-arg>
+		<constructor-arg value = "Prakhar"></constructor-arg>
+		<constructor-arg value = "65000"></constructor-arg>
+		
+	</bean>
+	<bean id="emp3" class="com.demo.Employee">
+		<constructor-arg index ="1" value = "Keyul"></constructor-arg>
+		<constructor-arg index ="0" value = "103"></constructor-arg>
+		<constructor-arg index ="2" value = "66000"></constructor-arg>
+		
+	</bean>
+</beans>

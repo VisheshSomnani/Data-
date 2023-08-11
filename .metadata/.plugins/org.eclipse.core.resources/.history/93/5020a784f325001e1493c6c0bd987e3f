@@ -1,0 +1,17 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.Subject;
+
+@Service
+public class SubjectServiceImpl implements ISubjectService{
+	@Autowired
+	ISubjectDao dao;
+	public List<Subject> getAllSubjectsByClass(String class1){
+		dao.getAllSubjectByClass();
+	}
+	
+}

@@ -1,0 +1,10 @@
+package com.example.demo.entity;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Book {
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="my_seq")
+	@SequenceGenerator(name="my_seq",sequenceName="my_seq",initialValue = 1, allocationSize=1)
+}

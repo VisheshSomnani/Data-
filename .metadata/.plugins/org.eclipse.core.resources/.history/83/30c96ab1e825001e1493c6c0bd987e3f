@@ -1,0 +1,23 @@
+package com.example.demo.entity;
+
+import java.util.Set;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="Transactions")
+public class Transaction {
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="my_seq")
+	@SequenceGenerator(name="my_seq",sequenceName="my_seq",initialValue = 1, allocationSize=1)
+	private int id;
+	
+	@OneToMany(mappedBy = "transaction")
+    Set<UserBooks> subjects;
+}

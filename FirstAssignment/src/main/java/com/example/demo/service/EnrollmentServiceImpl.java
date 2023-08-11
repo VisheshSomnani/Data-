@@ -1,0 +1,26 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.dao.IEnrollmentDao;
+import com.example.demo.entity.Enrollment;
+@Service
+public class EnrollmentServiceImpl implements IEnrollmentService{
+	@Autowired
+	IEnrollmentDao dao;
+	@Override
+	public List<Enrollment> getAllEnrollments() {
+		// TODO Auto-generated method stub
+		return dao.findAll();
+	}
+
+	@Override
+	public Enrollment insertEnrollment(Enrollment e) {
+		// TODO Auto-generated method stub
+		return dao.save(e);
+	}
+
+}

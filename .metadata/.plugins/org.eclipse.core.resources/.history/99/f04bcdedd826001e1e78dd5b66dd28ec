@@ -1,0 +1,6 @@
+package com.example.demo.service;
+
+public interface ITransactionService {
+	public List<Transaction> getAllTransactions();
+	public Transaction insertTransaction(Transaction t);
+}

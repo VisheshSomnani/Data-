@@ -1,0 +1,6 @@
+package com.example.demo.service;
+
+public interface IExamService {
+	public List<Exam> getAllExams();
+	public Exam insertExam(Exam e);
+}
